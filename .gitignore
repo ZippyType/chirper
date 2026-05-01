@@ -39,11 +39,6 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
 # Secret tokens
 token.tok
 *.tok
@@ -51,3 +46,21 @@ token.tok
 # Build outputs
 build/
 .dart_tool/
+
+# IDE
+.idx/
+.vscode/
+
+# Flutter
+android/
+web/
+*.lock
+pubspec.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
