@@ -21,11 +21,14 @@
 <body>
   <div class="loader">
     <div class="spinner"></div>
-    <div>Loading Chirper...</div>
+    <div id="status">Loading Chirper...</div>
   </div>
   <script>
-    window.onerror = function(msg) { document.body.innerHTML = '<div class="loader"><div>Error: ' + msg + '</div></div>'; };
+    window.onerror = function(msg, url, line) { 
+      document.getElementById('status').innerText = 'JavaScript error: ' + msg; 
+      console.error(msg, url, line);
+    };
   </script>
-  <script src="flutter_bootstrap.js" async onerror="document.body.innerHTML='<div class=loader><div>Failed to load</div></div>'"></script>
+  <script src="flutter_bootstrap.js" async onerror="document.getElementById('status').innerText='Failed to load flutter_bootstrap.js'"></script>
 </body>
 </html>
