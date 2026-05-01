@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../theme/app_theme.dart';
+import '../widgets/app_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -38,11 +39,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 80,
-              height: 80,
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.2),
@@ -51,20 +51,16 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(16),
-              child: Icon(
-                Icons.chat_bubble_rounded,
-                size: 48,
-                color: AppTheme.primaryColor,
-              ),
+              child: AppLogo(size: 64),
             ),
-            const SizedBox(height: 16),
-            const Text(
+            const SizedBox(height: 24),
+            Text(
               'Chirper',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 32,
+                fontSize: 36,
                 fontWeight: FontWeight.bold,
+                letterSpacing: -0.5,
               ),
             ),
           ],

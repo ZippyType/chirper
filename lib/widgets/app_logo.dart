@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../theme/app_theme.dart';
 
 class AppLogo extends StatelessWidget {
@@ -34,12 +33,9 @@ class AppLogo extends StatelessWidget {
               ),
             ],
           ),
-          child: Padding(
-            padding: EdgeInsets.all(size * 0.15),
-            child: SvgPicture.asset(
-              'assets/images/logo.svg',
-              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-            ),
+          child: CustomPaint(
+            size: Size(size, size),
+            painter: _ChirpIconPainter(color: Colors.white),
           ),
         ),
         if (showText) ...[
@@ -57,6 +53,36 @@ class AppLogo extends StatelessWidget {
       ],
     );
   }
+}
+
+class _ChirpIconPainter extends CustomPainter {
+  final Color color;
+  _ChirpIconPainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill
+      ..strokeCap = StrokeCap.round;
+
+    final cx = size.width / 2;
+    final cy = size.height / 2;
+    final s = size.width / 40;
+
+    final path = Path();
+    path.moveTo(cx - 8*s, cy + 4*s);
+    path.quadraticBezierTo(cx - 6*s, cy - 8*s, cx, cy - 10*s);
+    path.quadraticBezierTo(cx + 8*s, cy - 10*s, cx + 12*s, cy + 2*s);
+    path.quadraticBezierTo(cx + 10*s, cy + 6*s, cx + 4*s, cy + 8*s);
+    path.quadraticBezierTo(cx - 2*s, cy + 10*s, cx - 8*s, cy + 4*s);
+    canvas.drawPath(path, paint);
+
+    canvas.drawCircle(Offset(cx - 10*s, cy - 2*s), 2*s, Paint()..color = color..style = PaintingStyle.fill);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class VerifiedBadge extends StatelessWidget {
