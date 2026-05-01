@@ -5,13 +5,23 @@ import 'package:cached_network_image/cached_network_image.dart';
 import '../models/user.dart';
 import '../theme/app_theme.dart';
 
+final searchQueryProvider = StateProvider<String>((ref) => '');
+
 final exploreUsersProvider = FutureProvider<List<AppUser>>((ref) async {
   final supabase = Supabase.instance.client;
   final currentUserId = supabase.auth.currentUser?.id;
+  final searchQuery = ref.watch(searchQueryProvider);
 
   var query = supabase.from('profiles').select();
-  if (currentUserId != null) query = query.not('id', 'eq', currentUserId);
-
+  
+  if (currentUserId != null) {
+    query = query.not('id', 'eq', currentUserId);
+  }
+  
+  if (searchQuery.isNotEmpty) {
+    query = query.or('username.ilike.%$searchQuery%,full_name.ilike.%$searchQuery%');
+  }
+  
   final response = await query.order('created_at', ascending: false).limit(20);
   return response.map((json) => AppUser.fromJson(json)).toList();
 });
