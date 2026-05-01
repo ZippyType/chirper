@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _checkAuth() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 3));
     
     final session = Supabase.instance.client.auth.currentSession;
     
@@ -63,6 +63,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 letterSpacing: -0.5,
               ),
             ),
+            const SizedBox(height: 24),
+            const CircularProgressIndicator(color: Colors.white),
           ],
         ),
       ),

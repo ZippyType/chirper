@@ -9,7 +9,7 @@ void main() async {
   try {
     await SupabaseConfig.initialize();
   } catch (e) {
-    debugPrint('Supabase init error: $e');
+    debugPrint('Supabase init error: $e - running anyway');
   }
   runApp(const ProviderScope(child: ChirperApp()));
 }
