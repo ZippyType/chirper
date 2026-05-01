@@ -1,3 +1,4 @@
+
 # **AI Development Guidelines for Flutter in Firebase Studio**
 
 These guidelines define the operational principles and capabilities of an AI agent (e.g., Gemini) interacting with Flutter projects within the Firebase Studio environment. The goal is to enable an efficient, automated, and error-resilient application design and development workflow.
