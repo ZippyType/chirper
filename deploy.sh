@@ -15,6 +15,8 @@ flutter build web --no-tree-shake-icons
 echo "Copying to web folder..."
 rm -rf web/*
 cp -r build/web/* .
+echo "Copying to other web folder..."
+cp -r build/web/* ./web
 
 echo "Committing..."
 git add -A
