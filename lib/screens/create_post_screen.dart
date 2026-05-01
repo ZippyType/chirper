@@ -46,8 +46,17 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
       String? imageUrl;
 
       if (_selectedImage != null) {
-        final fileName = '${userId}_${DateTime.now().millisecondsSinceEpoch}.jpg';
-        await supabase.storage.from('posts').upload(fileName, File(_selectedImage!.path));
+        final fileName = '${userId}_${DateTime.now().millisecondsSinceEpoch}';
+        final file = File(_selectedImage!.path);
+        
+        await supabase.storage.from('posts').upload(
+          fileName,
+          file,
+          fileOptions: const FileOptions(
+            contentType: 'image/jpeg',
+            upsert: false,
+          ),
+        );
         imageUrl = supabase.storage.from('posts').getPublicUrl(fileName);
       }
 
