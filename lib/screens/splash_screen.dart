@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_logo.dart';
 
@@ -19,15 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _checkAuth() async {
-    await Future.delayed(const Duration(seconds: 3));
-    
-    final session = Supabase.instance.client.auth.currentSession;
-    
-    if (session != null) {
-      if (mounted) context.go('/home');
-    } else {
-      if (mounted) context.go('/login');
-    }
+    await Future.delayed(const Duration(seconds: 1));
+    if (mounted) context.go('/login');
   }
 
   @override

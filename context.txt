@@ -1,0 +1,44 @@
+# Chirper - Flutter Social Media App
+
+## Quick Start
+- Website: https://zippytype.github.io/chirper/
+- GitHub: https://github.com/ZippyType/chirper
+- Repo: ZippyType/chirper
+
+## Supabase Config
+- URL: https://bzqnxbqxhmdlhavntgah.supabase.co
+- Anon Key: sb_publishable_wRlyD_DBAO3vL8HSHRb9uQ_eSu7GXrT
+- Tables: profiles, posts, comments, likes, follows, notifications, moderation_log
+- Buckets: avatars, posts (both public)
+
+## Tech Stack
+- Flutter with Riverpod
+- Supabase (backend)
+- Material 3 design
+- go_router for navigation
+
+## Key Files
+- lib/main.dart - App entry point
+- lib/supabase/supabase_client.dart - Supabase config
+- lib/theme/app_theme.dart - Colors (violet/coral theme)
+- lib/screens/ - All screens (home, explore, create_post, profile, login, signup, etc.)
+- lib/widgets/ - Reusable widgets (app_logo, post_card, etc.)
+- lib/models/ - Data models (user, post, comment)
+
+## Commands
+- flutter run -d chrome (web)
+- flutter run -d emulator-5554 (android emulator - needs 7GB+ disk)
+- flutter build apk --debug (android APK)
+- flutter build web (web build)
+
+## GitHub Pages
+- Deploys from root folder
+- .nojekyll file needed
+
+## Known Issues
+- iOS emulator doesn't work on Linux (needs Mac)
+- Android emulator needs 7GB+ free disk
+- Web icons show as boxes on some browsers (tree-shaking issue - use --no-tree-shake-icons)
+
+## Last Updated
+2026-05-01
