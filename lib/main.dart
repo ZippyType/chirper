@@ -6,7 +6,11 @@ import 'theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SupabaseConfig.initialize();
+  try {
+    await SupabaseConfig.initialize();
+  } catch (e) {
+    debugPrint('Supabase init error: $e');
+  }
   runApp(const ProviderScope(child: ChirperApp()));
 }
 

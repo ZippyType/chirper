@@ -1,102 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
   <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Chirper - A modern social platform for conversations">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Chirper">
+  <meta name="apple-mobile-web-app-title" content="chirper">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>Chirper</title>
+  <title>chirper</title>
   <link rel="manifest" href="manifest.json">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background: #7C3AED;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      text-align: center;
-      color: white;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    .logo {
-      width: 80px;
-      height: 80px;
-      background: white;
-      border-radius: 20px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    }
-    .logo svg {
-      width: 48px;
-      height: 48px;
-    }
-    h1 {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .loading { margin-top: 30px; }
-    .loading span {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: white;
-      border-radius: 50%;
-      margin: 0 3px;
-      animation: bounce 1.4s infinite ease-in-out both;
-    }
-    .loading span:nth-child(1) { animation-delay: -0.32s; }
-    .loading span:nth-child(2) { animation-delay: -0.16s; }
-    @keyframes bounce {
-      0%, 80%, 100% { transform: scale(0); }
-      40% { transform: scale(1); }
-    }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-        <path d="M7 9h10v2H7zm0-3h10v2H7z"/>
-      </svg>
-    </div>
-    <h1>Chirper</h1>
-    <p>Loading your feed...</p>
-    <div class="loading">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

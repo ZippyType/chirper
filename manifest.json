@@ -1,11 +1,11 @@
 {
-    "name": "Chirper",
-    "short_name": "Chirper",
+    "name": "chirper",
+    "short_name": "chirper",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#7C3AED",
-    "theme_color": "#7C3AED",
-    "description": "Chirper - A modern social platform for conversations",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
