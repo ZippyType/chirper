@@ -25,20 +25,17 @@
 - lib/widgets/ - Reusable widgets (app_logo, post_card, etc.)
 - lib/models/ - Data models (user, post, comment)
 
+## GitHub Pages Issues
+- Pages API broken - can't enable programmatically
+- Files definitely exist (9KB flutter_bootstrap.js)
+- Works on Chrome, Safari has issues loading
+
 ## Commands
-- flutter run -d chrome (web)
-- flutter run -d emulator-5554 (android emulator - needs 7GB+ disk)
-- flutter build apk --debug (android APK)
-- flutter build web (web build)
+- flutter build web --no-tree-shake-icons (full web build)
+- flutter run -d chrome (local web)
 
-## GitHub Pages
-- Deploys from root folder
-- .nojekyll file needed
-
-## Known Issues
-- iOS emulator doesn't work on Linux (needs Mac)
-- Android emulator needs 7GB+ free disk
-- Web icons show as boxes on some browsers (tree-shaking issue - use --no-tree-shake-icons)
+## Note
+The web build is working (Chrome works), Safari has issues loading Flutter on iPad.
 
 ## Last Updated
 2026-05-01
