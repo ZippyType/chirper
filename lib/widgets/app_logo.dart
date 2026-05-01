@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../theme/app_theme.dart';
 
 class AppLogo extends StatelessWidget {
@@ -33,10 +34,12 @@ class AppLogo extends StatelessWidget {
               ),
             ],
           ),
-          child: Icon(
-            Icons.chat_rounded,
-            size: size * 0.55,
-            color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.all(size * 0.15),
+            child: SvgPicture.asset(
+              'assets/images/logo.svg',
+              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
           ),
         ),
         if (showText) ...[

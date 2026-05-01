@@ -25,6 +25,7 @@ dependencies:
   cached_network_image: ^3.4.1
   timeago: ^3.7.0
   flutter_animate: ^4.5.2
+  flutter_svg: ^2.0.10
   
   # Image handling
   image_picker: ^1.1.2
@@ -37,3 +38,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  assets:
+    - assets/images/

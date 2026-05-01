@@ -270,11 +270,9 @@ If clean: {"level": "none", "reason": "clean", "confidence": 1.0}'''
     for (final post in posts) {
       await processPostForModeration(post['id'], apiKey);
     }
-  }
+}
 }
 
-// Riverpod providers
-final openRouterApiKeyProvider = Provider<String>((ref) => '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');
 final contentModeratorProvider = Provider((ref) => ContentModerator());
 
 final moderateContentProvider = FutureProvider.family<ModerationResult, String>((ref, content) async {
